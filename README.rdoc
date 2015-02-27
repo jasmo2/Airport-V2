@@ -1,0 +1,4 @@
+== README
+ This is the version 2 of the Airport App powered by Ruby on Rails.
+
+ Enjoy the ride!
