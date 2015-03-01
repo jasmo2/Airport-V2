@@ -1,0 +1,32 @@
+<div class="ui list">
+  <div class="item">
+    <img class="ui top aligned avatar image" src="http://forums.bajasae.net/forum/uploads/39/MeanCardinal2avy.jpg">
+    <div class="content">
+      <div class="header"><%=@flight.airline.name%></div>
+      <%="flight Nº: #{@flight.number}"%>
+      Passenger's list
+      <div class="list">
+      <% if !@flight.passengers.blank? %>
+        <% for passenger in @flight.passengers %>
+	        <div class="item">
+	          <i class="right triangle icon"></i>
+	          <div class="content">
+	            <a class="header">Name:   <i><%=passenger.name%></i></a>
+	            <div class="description">Passport number: <%=passenger.passport%></div>
+	          </div>
+	        </div>
+        <% end %>
+      <% else %>
+        	<div class="item">
+	          <i class="right triangle icon"></i>
+	          <div class="content">
+	            <a class="header"><strong>No passenger's yet</strong> <%=%></a>
+	            <div class="description">all seats are available</div>
+	          </div>
+	        </div>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

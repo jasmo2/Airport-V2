@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AirportV2</title>
+  <title>Airport</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%=render 'devise/sessions/new'%>
 <%= yield %>
+<br><br><br><br><br>
+<footer class="ui inverted segment footer">
+  <p>Web designed by <a href="https://github.com/jasmo2">Jasmo2</a></p>
 
+</footer>
 </body>
 </html>

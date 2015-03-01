@@ -1,0 +1,39 @@
+<nav class="ui menu navbar page grid" style="margin-bottom: 0px">
+ <%= link_to "Make Jaime's AIRPORT", root_path, class: 'brand item' %>
+
+  <!-- <a href="" class="brand item">Make Jaime's AIRPORT </a> -->
+  <% if passenger_signed_in? %>
+    <div class="right menu">
+       <%= link_to "Your Flights", passengers_flights_path(current_passenger),class: "item" %>
+       <div class="item">Signed in as <%= current_passenger.passport %>. Not you?</div>
+         <%= link_to "Sign out", destroy_passenger_session_path, :method => :delete,class: "item" %>
+    </div>
+   <% else %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: {class: 'right menu'}) do |f| %>
+        <div class="item">
+          <%= f.text_field :passport, autofocus: true, placeholder: "  Passport" %>
+        </div>
+
+        <div class="item">
+          <%= f.password_field :password, autocomplete: "off" ,placeholder: "  Password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? && false -%>
+          <div class="item">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="item">
+          <%= f.submit "Log in", class:"ui green button", value: "Login" %>
+        </div>
+      <% end %>
+   <% end %>
+   
+</nav>
+
+<div class="container">
+  <div class="row"> <div class="col-md-12"><br></div> </div>
+</div>
+

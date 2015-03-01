@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root to: "flights#index" 
+  resources :flights, only: [:index, :show] do
+    resources :passengers, only: [:index]
+  end
+  get 'passenger/:id/flights' => 'passengers#show', as: :passengers_flights
+  devise_for :passengers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

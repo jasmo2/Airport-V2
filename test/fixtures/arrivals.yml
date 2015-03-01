@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: arrivals
+#
+#  id         :integer          not null, primary key
+#  flight_id  :integer
+#  date       :datetime
+#  status     :integer          default("0")
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flight_id: 1
+  date: 2015-02-27 12:27:40
+  status: 
+
+two:
+  flight_id: 1
+  date: 2015-02-27 12:27:40
+  status: 

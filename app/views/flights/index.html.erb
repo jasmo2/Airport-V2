@@ -1,0 +1,89 @@
+
+<div class="container">
+	<div class="row">
+		<!-- Begin Arrivals -->
+		<div class="col-md-6 col-xs-12">
+			<table class="ui celled striped table">
+				<thead>
+					<tr>
+						<th colspan="5">
+							Arrivals
+						</th>
+				</tr>
+	 		  	<tr>
+ 		      		<th>Flight Number</th>
+ 		      		<th>Airline</th>
+ 		      		<th>Time</th>
+ 		      		<th>Status</th>
+ 		      		<th>Passanger List</th>
+	 		  	</tr>
+				</thead><tbody>
+				<%  if !@flights.blank? %>
+				<% for flight in @flights %>
+				<tr>
+					<tr>
+						<td class="collapsing">
+							<i class="plane icon"></i> <%= flight.number %>
+						</td>
+						<td><%=flight.airline.name%></td>
+						<td><%=flight.arrival.date%></td>
+						<td >
+							<%=flight.arrival.status%>
+						</td>
+						<td class="right aligned collapsing">
+							<%=link_to("List",flight_passengers_path(flight), class: "mini ui button")%>
+						</td>
+					</tr>
+				</tr>
+				<% end %>
+				<% else %>
+
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<!-- End Arrivals -->
+
+	<!-- Begin Departures -->
+	<div class="col-md-6 col-xs-12">
+		<table class="ui celled striped table">
+			<thead>
+				<tr>
+					<th colspan="5">
+						Departures
+					</th>
+				</tr>
+				<tr>
+ 		      		<th>Flight Number</th>
+ 		      		<th>Airline</th>
+ 		      		<th>Time</th>
+ 		      		<th>Status</th>
+ 		      		<th>Passanger List</th>
+	 		  	</tr>
+			</thead><tbody>
+			<%  if !@flights.blank? %>
+				<% for flight in @flights %>
+				<tr>
+					<tr>
+						<td class="collapsing">
+							<i class="plane icon"></i> <%= flight.number %>
+						</td>
+						<td><%=flight.airline.name%></td>
+						<td><%=flight.departure.date%></td>
+						<td >
+							<%=flight.departure.status%>
+						</td>
+						<td class="right aligned collapsing">
+							<%=link_to("List",flight_passengers_path(flight), class: "mini ui button")%>
+						</td>
+					</tr>
+				</tr>
+				<% end %>
+				<% else %>
+
+				<% end %>
+		</tbody>
+	</table>
+</div>
+</div>
+</div>
